@@ -1,7 +1,0 @@
-entity TLC is
-	port(lrb: in std_logic_vector(2 downto 0);
-		  clk: in std_logic;
-		  lights: out std_logic_vector(7 downto 0));
-end TLC;
-
-architecture char of TLC is
