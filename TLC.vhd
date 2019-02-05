@@ -9,9 +9,8 @@ entity TLC is
 end TLC;
 
 architecture char of TLC is
-signal count: std_logic_vector(4 downto 0);
-constant initial: std_logic_vector(4 downto 0) := "00000";
-constant count32: std_logic_vector(4 downto 0) := "11110";
+signal count: std_logic_vector(26 downto 0);
+
 
 begin 
 	process(clk, lrb, count)
@@ -22,79 +21,79 @@ begin
 				elsif lrb = "001" then
 					lights <= "11111111";
 				elsif lrb = "010" then
-						count <= "00000";
-						if count <= "00110" then
+						count <= "000000000000000000000000000";
+						if count <= "01011111010111100001000000" then
 							lights <= "00000000";
 							count <= count + 1;
-						elsif (count <= "01100" and count > "00110") then
+						elsif (count <= "10111110101111000010000000" and count > "01011111010111100001000000") then
 							lights <= "00001000";
 							count <= count + 1;
-						elsif (count <= "10010" and count > "01100") then
+						elsif (count <= "100011110000110100011000000" and count > "10111110101111000010000000") then
 							lights <= "00001100"; 
 							count <= count + 1;
-						elsif (count <= "11000" and count > "10010") then
+						elsif (count <= "101111101011110000100000000" and count > "100011110000110100011000000") then
 							lights <= "00001110";
 							count <= count + 1;
-						elsif (count <= count32 and count > "11000") then
+						elsif (count <= "111011100110101100101000000" and count > "101111101011110000100000000") then
 							lights <= "00001111";
 							count <= count + 1;
 						end if;
 				elsif lrb = "011" then 
-								count <= "00000";
-						if count <= "00110" then
+								count <= "000000000000000000000000000";
+						if count <= "001011111010111100001000000" then
 							lights <= "11110000";
 							count <= count + 1;
-						elsif (count <= "01100" and count > "00110") then
+						elsif (count <= "10111110101111000010000000" and count > "01011111010111100001000000") then
 							lights <= "11111000";
 							count <= count + 1;
-						elsif (count <= "10010" and count > "01100") then
+						elsif (count <= "100011110000110100011000000" and count > "10111110101111000010000000") then
 							lights <= "11111100"; 
 							count <= count + 1;
-						elsif (count <= "11000" and count > "10010") then
+						elsif (count <= "101111101011110000100000000" and count > "100011110000110100011000000") then
 							lights <= "11111110";
 							count <= count + 1;
-						elsif (count <= count32 and count > "11000") then
+						elsif (count <= "111011100110101100101000000" and count > "101111101011110000100000000") then
 							lights <= "11111111";
 							count <= count + 1;
 						end if;
 				elsif lrb = "100" then
-								count <= "00000";
-						if count <= "00110" then
+								count <= "000000000000000000000000000";
+						if count <= "001011111010111100001000000" then
 							lights <= "00000000";
 							count <= count + 1;
-						elsif (count <= "01100" and count > "00110") then
+						elsif (count <= "10111110101111000010000000" and count > "01011111010111100001000000") then
 							lights <= "00010000";
 							count <= count + 1;
-						elsif (count <= "10010" and count > "01100") then
+						elsif (count <= "100011110000110100011000000" and count > "10111110101111000010000000") then
 							lights <= "00110000"; 
 							count <= count + 1;
-						elsif (count <= "11000" and count > "10010") then
+						elsif (count <= "101111101011110000100000000" and count > "100011110000110100011000000") then
 							lights <= "01110000";
 							count <= count + 1;
-						elsif (count <= count32 and count > "11000") then
+						elsif (count <= "111011100110101100101000000" and count > "101111101011110000100000000") then
 							lights <= "11110000";
 							count <= count + 1;
 						end if;
 				elsif lrb = "101" then
-						count <= "00000";
-						if count <= "00110" then
-							lights <= "00000000";
+						count <= "000000000000000000000000000";
+						if count <= "001011111010111100001000000" then
+							lights <= "00001111";
 							count <= count + 1;
-						elsif (count <= "01100" and count > "00110") then
+						elsif (count <= "10111110101111000010000000" and count > "01011111010111100001000000") then
 							lights <= "00011111";
 							count <= count + 1;
-						elsif (count <= "10010" and count > "01100") then
+						elsif (count <= "100011110000110100011000000" and count > "10111110101111000010000000") then
 							lights <= "00111111"; 
 							count <= count + 1;
-						elsif (count <= "11000" and count > "10010") then
+						elsif (count <= "101111101011110000100000000" and count > "100011110000110100011000000") then
 							lights <= "01111111";
 							count <= count + 1;
-						elsif (count <= count32 and count > "11000") then
+						elsif (count <= "111011100110101100101000000" and count > "101111101011110000100000000") then
 							lights <= "11111111";
 							count <= count + 1;
 						end if;
 				elsif lrb = "110" then
-						count <= "00000";
+						count <= "000000000000000000000000000";
 						if (count <= "10000") then 
 							lights <= "00000000";
 							count <= count + 1;
