@@ -94,10 +94,10 @@ begin
 						end if;
 				elsif lrb = "110" then
 						count <= "000000000000000000000000000";
-						if (count <= "10000") then 
+						if (count <= "001011111010111100001000000") then 
 							lights <= "00000000";
 							count <= count + 1;
-						elsif (count <= "11111" and count > "10000") then
+						elsif (count <= "010111110101111000010000000" and count > "001011111010111100001000000") then
 							lights <= "11111111";
 							count <= count + 1;
 						end if;
